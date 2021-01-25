@@ -17,6 +17,8 @@
     --block1: calc(var(--avatar-size) * var(--cover-percent));
     --block2: calc(var(--avatar-size) - var(--block1));
 
+    --body-offset: calc(var(--banner-size) + var(--block2) + 25px);
+
     --footer-size: 100px;
 }
 
@@ -28,7 +30,8 @@ body {
 }
 
 div.header {
-    position: absolute;
+    position: fixed;
+    top: 0px;
     height: fit-content;
     width: 100%;
     margin: 0px;
@@ -79,7 +82,7 @@ div.header div.quote {
 }
 
 div.footer {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     width: 100%;
     margin: 0px;
@@ -140,6 +143,12 @@ div.footer td.contact2 {
 }
 
 /* Style the tab */
+div.body {
+    position: relative;
+    z-index: 1000;
+    margin-top: var(--body-offset)
+}
+
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -149,6 +158,7 @@ div.footer td.contact2 {
 /* Style the buttons that are used to open the tab content */
 .tab button {
     background-color: inherit;
+    font-size: 1rem;
     float: left;
     border: none;
     outline: none;
