@@ -5,42 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Henry Tran's</title>
         <link rel="stylesheet" href="./style.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $(function () {
+                $("#header").load("header.html");
+                $("#footer").load("footer.html");
+            });
+        </script>
     </head>
     <body>
-        <!-- <div class="header">
-            <img
-                class="banner"
-                src="https://cloud.designbold.com/media/image/BZ4xbp9XL9/1/screen.png"
-            />
-            <table class="header-info">
-                <tbody>
-                    <tr>
-                        <td><img class="avatar" src="./img/avatar.jpg" /></td>
-                        <td>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="name">Henry Tran</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="quote">
-                                                "If opportunity doesn't knocked,
-                                                build a door"
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> -->
+        <div id="header"></div>
 
-        <div class="body">
+        <!-- <div class="body">
             <div class="tab">
                 <button class="tablinks" onclick="openCity(event, 'Basic')">
                     Basic Information
@@ -57,9 +37,11 @@
                 >
                     Work Experience
                 </button>
+                <button class="tablinks" onclick="openCity(event, 'Games')">
+                    Favorite games
+                </button>
             </div>
 
-            <!-- Tab content -->
             <div id="Basic" class="tabcontent">
                 <h3>London</h3>
                 <p>London is the capital city of England.</p>
@@ -78,52 +60,13 @@
                 <h3>Tokyo</h3>
                 <p>Tokyo i</p>
             </div>
-        </div>
-
-        <!-- <div class="footer">
-            <img
-                class="banner"
-                src="https://cloud.designbold.com/media/image/BZ4xbp9XL9/1/screen.png"
-            />
-
-            <table class="footer">
-                <tr>
-                    <td class="contact0">My contact</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td class="contact1">Tranhoang9614</td>
-                            </tr>
-                            <tr>
-                                <td class="contact2">@gmail.com</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <a href="mailto:tranhoang9614@gmail.com">
-                            <img
-                                src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=mailto:tranhoang9614@gmail.com"
-                        /></a>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td class="contact1">0908.979.614</td>
-                            </tr>
-                            <tr>
-                                <td class="contact2">Phone</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <a href="http://zaloapp.com/qr/p/1eds2xqvpknga">
-                            <img
-                                src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=http://zaloapp.com/qr/p/1eds2xqvpknga"
-                        /></a>
-                    </td>
-                </tr>
-            </table>
+            <div id="Games" class="tabcontent">
+                <h3>Tokyo</h3>
+                <p>Tokyo i</p>
+            </div>
         </div> -->
+
+        <div id="footer"></div>
         <script type="text/javascript" src="./script.js"></script>
     </body>
 </html>
