@@ -16,9 +16,6 @@
                 $("#footer").load("footer.html");
                 $("#MusicsPage").load("Musics.html");
                 $("#GamesPage").load("Games.html");
-                $("#VideosPage").load("Videos.html");
-                $("#PicturesPage").load("Pictures.html");
-                $("#InfoPage").load("Info.html");
             });
         </script>
     </head>
@@ -27,17 +24,8 @@
 
         <div class="body">
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'Info')">
-                    My info
-                </button>
                 <button class="tablinks" onclick="openCity(event, 'Musics')">
                     Musics
-                </button>
-                <button class="tablinks" onclick="openCity(event, 'Videos')">
-                    Videos
-                </button>
-                <button class="tablinks" onclick="openCity(event, 'Pictures')">
-                    Pictures
                 </button>
                 <button class="tablinks" onclick="openCity(event, 'Games')">
                     Games
@@ -47,19 +35,8 @@
             <div id="Musics" class="tabcontent">
                 <div id="MusicsPage"></div>
             </div>
-
             <div id="Games" class="tabcontent">
                 <div id="GamesPage"></div>
-            </div>
-
-            <div id="Videos" class="tabcontent">
-                <div id="VideosPage"></div>
-            </div>
-            <div id="Pictures" class="tabcontent">
-                <div id="PicturesPage"></div>
-            </div>
-            <div id="Info" class="tabcontent">
-                <div id="InfoPage"></div>
             </div>
         </div>
 

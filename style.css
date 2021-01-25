@@ -17,7 +17,9 @@
     --block1: calc(var(--avatar-size) * var(--cover-percent));
     --block2: calc(var(--avatar-size) - var(--block1));
 
-    --body-offset: calc(var(--banner-size) + var(--block2) + 25px);
+    --body-offset: calc(
+        99vh - var(--banner-size) - var(--block2) - 25px - var(--footer-size)
+    );
 
     --footer-size: 100px;
 }
@@ -30,7 +32,7 @@ body {
 }
 
 div.header {
-    position: fixed;
+    position: sticky;
     top: 0px;
     height: fit-content;
     width: 100%;
@@ -82,7 +84,7 @@ div.header div.quote {
 }
 
 div.footer {
-    position: fixed;
+    position: sticky;
     bottom: 0px;
     width: 100%;
     margin: 0px;
@@ -146,7 +148,8 @@ div.footer td.contact2 {
 div.body {
     position: relative;
     z-index: 1000;
-    margin-top: var(--body-offset)
+    margin-top: 25px;
+    min-height: var(--body-offset);
 }
 
 .tab {
@@ -180,7 +183,5 @@ div.body {
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid black;
-    border-top: none;
+    padding: 12px 12px;
 }
