@@ -1,1 +1,131 @@
+*,
+*::before,
+*::after {
+    font-family: Comfortaa, Roboto, Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+    border: 0px solid black;
+}
 
+:root {
+    --document-width: max(100%, 100vw);
+    --document-height: max(100%, 100vh);
+    --banner-size: 200px;
+    --avatar-size: 150px;
+    --cover-percent: 0.7;
+    --block1: calc(var(--avatar-size) * var(--cover-percent));
+    --block2: calc(var(--avatar-size) - var(--block1));
+
+    --footer-size: 100px;
+}
+
+body {
+    height: var(--document-height);
+    width: var(--document-width);
+    margin: 0px;
+    padding: 0px;
+}
+
+div.header {
+    position: absolute;
+    height: fit-content;
+    width: 100%;
+    margin: 0px;
+}
+
+div.header table.header-info {
+    margin-top: calc(var(--block1) * -1);
+    height: var(--avatar-size);
+}
+
+div.header img.banner {
+    position: static;
+    width: 100%;
+    height: var(--banner-size);
+    object-fit: cover;
+    z-index: -1;
+}
+
+div.header img.avatar {
+    position: relative;
+    border-radius: 15%;
+    width: var(--avatar-size);
+    z-index: 100;
+    margin: 0px 25px;
+}
+
+div.header div.name {
+    display: table-cell;
+    height: var(--block1);
+    font-size: 3rem;
+    color: white;
+    font-weight: 900;
+    vertical-align: middle;
+}
+
+div.header div.quote {
+    color: black;
+    display: table-cell;
+    height: var(--block2);
+    font-size: 1.5rem;
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+div.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin: 0px;
+    height: fit-content;
+}
+div.footer table {
+    width: max-content;
+    height: var(--footer-size);
+    table-layout: auto;
+    text-align: center;
+    margin: 0px 0px 0px auto;
+}
+
+div.footer img.banner {
+    position: absolute;
+    width: 100%;
+    height: var(--footer-size);
+    object-fit: cover;
+    border-radius: 0%;
+    z-index: -1;
+}
+
+div.footer img {
+    position: relative;
+    height: calc(var(--footer-size) * 0.75);
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+div.footer td {
+    color: white;
+    width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px 10px;
+}
+
+div.footer td.contact0 {
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+div.footer td.contact1 {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 600;
+    vertical-align: bottom;
+    padding-bottom: 1%;
+}
+div.footer td.contact2 {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 500;
+    vertical-align: top;
+    padding-top: 1%;
+}
