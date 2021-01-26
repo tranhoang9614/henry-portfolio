@@ -6,14 +6,19 @@
         <title></title>
     </head>
     <body>
-        <iframe
-            class="music"
-            src="https://open.spotify.com/embed/playlist/2LKYbLBCxTSHVGhJZbXcFV"
-            width="300"
-            height="380"
-            frameborder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
-        ></iframe>
+        <table id="mp3_player">
+            <tr>
+                <td>
+                    <div class="song_name">
+                        <span class="current"
+                            ><b>Kiss the rain</b> - <b>Yiruma</b></span
+                        >
+                    </div>
+                    >
+                    <canvas id="analyser_render"></canvas>
+                    <div id="audio_box"></div>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
