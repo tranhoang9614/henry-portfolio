@@ -56,16 +56,17 @@ function formatNumber(number) {
 
 // Create a new instance of an audio object and adjust some of its properties
 var audio;
-function newAudio(sourceLink) {
+async function newAudio(sourceLink) {
     audio = new Audio();
     audio.src = sourceLink;
     audio.controls = true;
-    audio.loop = false;
-    audio.autoplay = true;
+    audio.loop = true;
+    audio.autoplay = false;
     audio.preload = "metadata";
+    audio.id = await "audio1";
+    player = document.getElementById("audio1");
 }
 
-newAudio("./media/KissTheRain.mp3");
 // Establish all variables that your Analyser will use
 var canvas,
     ctx,
@@ -78,14 +79,27 @@ var canvas,
     bar_width,
     bar_height;
 // Initialize the MP3 player after the page loads all of its HTML into the window
-window.addEventListener("load", initMp3Player, false);
+window.addEventListener(
+    "load",
+    () => {
+        newAudio("./media/KissTheRain.mp3");
+        document.getElementById("audio_box").appendChild(audio);
+    },
+    false
+);
+
+var player;
+
+player.addEventListener("pause", () => {
+    console.log(audio, player);
+    console.log("Audio played");
+    initMp3Player();
+});
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
 // https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/frequency
 
 function initMp3Player() {
-    document.getElementById("audio_box").appendChild(audio);
-
     context = new AudioContext(); // AudioContext object instance
     analyser = context.createAnalyser(); // AnalyserNode method
     canvas = document.getElementById("analyser_render");
