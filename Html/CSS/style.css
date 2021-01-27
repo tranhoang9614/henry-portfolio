@@ -181,7 +181,7 @@ div.body {
 }
 
 /* Style the tab content */
-.tabcontent {
+div.tabcontent {
     display: none;
     padding: 12px 12px;
 }
@@ -227,4 +227,36 @@ table#mp3_player div.song_name {
     padding: 0px;
     font-size: 1.25rem;
     font-weight: 600;
+}
+
+table#CountingGame,
+table#CountingGame table {
+    margin: 5px 10px;
+}
+
+table#CountingGame img {
+    width: 150px;
+    border-radius: 5%;
+}
+
+table#CountingGame button {
+    background-color: lightgray;
+    border: 1px dotted lightgrey;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+}
+
+table#CountingGame button:active {
+    background-color: gray;
+}
+
+table#CountingGame button:disabled {
+    background-color: black;
+    color: white;
+}
+
+table#CountingGame code {
+    font-weight: 1000;
+    margin: 5px;
 }

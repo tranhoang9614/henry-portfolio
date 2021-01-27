@@ -4,6 +4,11 @@ const BestNum = [2, 6, 10, 14, 18, 22, 26, 30];
 var currentNum, winner;
 var firstPlayer;
 
+var mess1 = document.getElementById("mess1"); // ==> Text only
+var mess2 = document.getElementById("mess2"); // ==> Number only
+var mess3 = document.getElementById("mess3"); // ==> Text only
+var mess4 = document.getElementById("mess4"); // ==> Button only
+
 initialGame();
 function initialGame() {
     firstPlayer = "I";
@@ -41,7 +46,7 @@ async function NumberSelect(OpponentNumber) {
 
 function OpponentOptions() {
     var Options = [];
-    for (let i = 1; i < numStep; i++) {
+    for (let i = 1; i <= numStep; i++) {
         if (currentNum + i <= numEnd) {
             Options.push(currentNum + i);
         } else {
@@ -80,6 +85,7 @@ function userSelect(Message) {
 }
 
 async function ShowMessage(option) {
+    RemoveCurrentMessage();
     var P1, P2, P3, P4;
     switch (option) {
         case "initial":
@@ -95,11 +101,9 @@ async function ShowMessage(option) {
             break;
         case "tutorial":
             P1 =
-                "We'll take turn to call a number, for example I call [1], then you'll call a number, which must be smaller than my number plus the step number.";
-            P2 =
-                "For example, if step = 3, so you have three options to call [2, 3, 4]. Then my next number will be based on your choice, plus step 3. ";
-            P3 =
-                "Who call the final number, for example [30], will be the one who win.";
+                "We'll take turn to call a number, for example I call [1], then you'll call a number, which must be smaller than my number plus the step number. For example, if step = 3, so you have three options to call [2, 3, 4]. Then my next number will be based on your choice, plus step 3. Who call the final number, for example [30], will be the one who win.";
+            P2 = "";
+            P3 = "";
             P4 = ["OK, let's start"];
             break;
         case "start":
@@ -133,4 +137,32 @@ async function ShowMessage(option) {
             P4 = await OpponentOptions();
             break;
     }
+
+    mess1.textContent = P1;
+    mess2.textContent = P2;
+    mess3.textContent = P3;
+    for (let i = 0; i < P4.length; i++) {
+        CreateButton(P4[i]);
+    }
+}
+
+function RemoveCurrentMessage() {
+    mess1.innerHTML = "";
+    mess2.innerHTML = "";
+    mess3.innerHTML = "";
+    mess4.innerHTML = "";
+}
+
+function CreateButton(content) {
+    // 1. Create the button
+    var button = document.createElement("button");
+    button.innerHTML = content;
+
+    // 2. Append somewhere
+    document.getElementById("mess4").appendChild(button);
+
+    // 3. Add event handler
+    button.addEventListener("click", () => {
+        userSelect(content);
+    });
 }
