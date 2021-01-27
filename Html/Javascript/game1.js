@@ -30,7 +30,7 @@ async function NumberSelect(OpponentNumber) {
                 }
             }
         } else {
-            var j = Math.floor(Math.random() * numStep);
+            var j = Math.ceil(Math.random() * numStep);
             Choose = OpponentNumber + j;
         }
 
