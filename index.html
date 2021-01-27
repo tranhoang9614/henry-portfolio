@@ -14,8 +14,10 @@
             $(function () {
                 $("#header").load("./Html/header.html");
                 $("#footer").load("./Html/footer.html");
+                $("#UnderDevelope").load("./Html/developing.html");
                 $("#MusicsPage").load("./Html/Musics.html");
                 $("#Game1Page").load("./Html/game1.html");
+                $("#Game2Page").load("./Html/game2.html");
             });
         </script>
     </head>
@@ -25,18 +27,24 @@
         <div class="body">
             <div class="tab">
                 <button class="tablinks" onclick="openPage(event, 'Musics')">
-                    Musics
+                    (Music)
                 </button>
                 <button class="tablinks" onclick="openPage(event, 'Game1')">
-                    Counting Game
+                    Number Count
+                </button>
+                <button class="tablinks" onclick="openPage(event, 'UnderDevelope')">
+                    Tic-tac-toe
                 </button>
             </div>
 
-            <div id="Musics" class="tabcontent default">
+            <div id="Musics" class="tabcontent">
                 <div id="MusicsPage"></div>
             </div>
             <div id="Game1" class="tabcontent">
                 <div id="Game1Page"></div>
+            </div>
+            <div id="UnderDevelope" class="tabcontent default">
+                <div id="Game2Page"></div>
             </div>
         </div>
 

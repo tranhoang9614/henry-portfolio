@@ -264,3 +264,110 @@ table#CountingGame code {
     font-weight: 1000;
     margin: 5px;
 }
+
+div.Tic-tac-toe {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    width: max-content;
+    height: max-content;
+    grid-template-columns: repeat(3, auto);
+}
+
+div.Tic-tac-toe .cell {
+    --cell-size: 100px;
+    --percent: 0.75;
+    --sign-size: calc(var(--cell-size) * var(--percent));
+    border: 1px solid black;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+div.Tic-tac-toe .cell:nth-child(1),
+div.Tic-tac-toe .cell:nth-child(2),
+div.Tic-tac-toe .cell:nth-child(3) {
+    border-top: none;
+}
+
+div.Tic-tac-toe .cell:nth-child(3n + 3) {
+    border-right: none;
+}
+div.Tic-tac-toe .cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+div.Tic-tac-toe .cell:nth-child(7),
+div.Tic-tac-toe .cell:nth-child(8),
+div.Tic-tac-toe .cell:nth-child(9) {
+    border-bottom: none;
+}
+
+div.Tic-tac-toe .cell.x,
+div.Tic-tac-toe .cell.o {
+    cursor: not-allowed;
+}
+
+div.Tic-tac-toe .cell.x::before,
+div.Tic-tac-toe .cell.x::after,
+div.Tic-tac-toe.x .cell:not(.x):not(.o):hover::before,
+div.Tic-tac-toe.x .cell:not(.x):not(.o):hover::after {
+    content: "";
+    height: calc(var(--sign-size) * 0.95);
+    width: calc(var(--sign-size) * 0.15);
+    position: absolute;
+}
+
+div.Tic-tac-toe .cell.x::before,
+div.Tic-tac-toe .cell.x::after {
+    background-color: #555;
+}
+
+div.Tic-tac-toe.x .cell:not(.x):not(.o):hover::before,
+div.Tic-tac-toe.x .cell:not(.x):not(.o):hover::after {
+    background-color: lightgray;
+}
+
+div.Tic-tac-toe .cell.x::before,
+div.Tic-tac-toe.x .cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+}
+
+div.Tic-tac-toe .cell.x::after,
+div.Tic-tac-toe.x .cell:hover::after {
+    transform: rotate(-45deg);
+}
+
+div.Tic-tac-toe .cell.o::before,
+div.Tic-tac-toe .cell.o::after,
+div.Tic-tac-toe.o .cell:not(.x):not(.o):hover::before,
+div.Tic-tac-toe.o .cell:not(.x):not(.o):hover::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+div.Tic-tac-toe .cell.o::before,
+div.Tic-tac-toe.o .cell:not(.x):not(.o):hover::before {
+    height: calc(var(--sign-size) * 0.95);
+    width: calc(var(--sign-size) * 0.95);
+}
+
+div.Tic-tac-toe .cell.o::before {
+    background-color: #555;
+}
+div.Tic-tac-toe.o .cell:not(.x):not(.o):hover::before {
+    background-color: lightgray;
+}
+
+div.Tic-tac-toe .cell.o::after,
+div.Tic-tac-toe.o .cell:not(.x):not(.o):hover::after {
+    height: calc(var(--sign-size) * 0.65);
+    width: calc(var(--sign-size) * 0.65);
+    background-color: white;
+}
