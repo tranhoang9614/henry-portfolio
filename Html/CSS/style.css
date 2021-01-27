@@ -186,6 +186,10 @@ div.tabcontent {
     padding: 12px 12px;
 }
 
+div.tabcontent.default {
+    display: block;
+}
+
 table#mp3_player {
     display: table;
     margin-top: 25px;
