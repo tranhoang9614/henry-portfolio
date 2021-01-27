@@ -89,14 +89,14 @@ async function ShowMessage(option) {
     var P1, P2, P3, P4;
     switch (option) {
         case "initial":
-            P1 = "Hi my fiend, let's play a small game of number summing.";
-            P2 = "";
-            P3 =
-                "Final number will be " +
+            P1 =
+                "Hi my fiend, let's play a small game of number summing. Final number will be " +
                 numEnd +
                 ", and step will be " +
                 numStep +
                 ".";
+            P2 = "";
+            P3 = "";
             P4 = ["OK, let's start", "How to play"];
             break;
         case "tutorial":
@@ -121,8 +121,8 @@ async function ShowMessage(option) {
             break;
         case "stop":
             if (winner === "I") {
-                P1 = "My number is ";
-                P2 = numEnd;
+                P1 = "Yeah, my number is ";
+                P2 = currentNum;
             } else {
                 P1 = "Congratulation, you win! Let's play another game. ";
                 P2 = "";

@@ -218,8 +218,7 @@ table#mp3_player div#audio_box {
 table#mp3_player div#audio_box audio {
     max-height: 50px;
     width: 100%;
-    border-radius: none;
-    background-color: none;
+    border: none;
 }
 
 table#mp3_player div.song_name {
@@ -239,7 +238,7 @@ table#CountingGame table {
 }
 
 table#CountingGame img {
-    width: 150px;
+    width: 250px;
     border-radius: 5%;
 }
 
@@ -247,21 +246,18 @@ table#CountingGame button {
     background-color: lightgray;
     border: 1px dotted lightgrey;
     border-radius: 10px;
-    margin: 5px;
+    font-size: 1rem;
+    margin: 15px 10px;
     padding: 10px;
+    min-width: 45px;
 }
 
 table#CountingGame button:active {
     background-color: gray;
 }
 
-table#CountingGame button:disabled {
-    background-color: black;
-    color: white;
-}
-
 table#CountingGame code {
-    font-weight: 1000;
+    font-weight: 800;
     margin: 5px;
 }
 
