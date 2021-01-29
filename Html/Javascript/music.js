@@ -33,8 +33,10 @@ var canvas,
 window.addEventListener(
     "load",
     () => {
+        console.log("before ", audio);
         musicstatus = true;
         newAudio("./Html/media/KissTheRain.mp3");
+        console.log("after ", audio);
     },
     false
 );
