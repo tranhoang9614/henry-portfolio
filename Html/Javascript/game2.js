@@ -48,6 +48,13 @@ function initialSetup() {
     startGame();
 }
 
+function setupHardGame() {
+    var A = gameMode.textContent.indexOf("You can't win me");
+    if (A !== -1) {
+        playerTurn = true;
+    }
+}
+
 // startGame, apply for each new game
 function startGame() {
     winner = false;
@@ -55,6 +62,8 @@ function startGame() {
     cells.forEach((cell) => {
         cell.addEventListener("click", cellClick, { once: true });
     });
+
+    setupHardGame();
     startTurn();
 }
 
@@ -74,7 +83,6 @@ function endGame(winningCase) {
 function startTurn() {
     playerTurn = !playerTurn;
     setBoardMark();
-
     if (playerTurn) {
         // wait for user click
     } else {
