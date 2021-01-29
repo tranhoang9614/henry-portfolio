@@ -29,14 +29,20 @@ var canvas,
     bar_x,
     bar_width,
     bar_height;
+
 // Initialize the MP3 player after the page loads all of its HTML into the window
 window.addEventListener(
     "load",
     () => {
-        console.log("before ", audio);
-        musicstatus = true;
-        newAudio("./Html/media/KissTheRain.mp3");
-        console.log("after ", audio);
+        musicStatus = true;
+
+        document.getElementById("MusicTab").addEventListener(
+            "click",
+            () => {
+                newAudio("./Html/media/KissTheRain.mp3");
+            },
+            { once: true }
+        );
     },
     false
 );
@@ -44,14 +50,14 @@ window.addEventListener(
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
 // https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/frequency
 
-var musicstatus;
+var musicStatus;
 
 function initMp3Player() {
     // Create for new Audio only
-    if (musicstatus) {
+    if (musicStatus) {
         context = new AudioContext();
         source = context.createMediaElementSource(audio);
-        musicstatus = false;
+        musicStatus = false;
     }
     // context = new AudioContext(); // AudioContext object instance
     analyser = context.createAnalyser(); // AnalyserNode method
