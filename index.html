@@ -18,6 +18,7 @@
                 $("#MusicsPage").load("./Html/Musics.html");
                 $("#Game1Page").load("./Html/game1.html");
                 $("#Game2Page").load("./Html/game2.html");
+                $("#Game3Page").load("./Html/game3.html");
             });
         </script>
         <link rel="icon" type="image/png" href="./favicon.ico" />
@@ -33,11 +34,11 @@
                 <button class="tablinks" onclick="openPage(event, 'Game1')">
                     Number Count
                 </button>
-                <button
-                    class="tablinks"
-                    onclick="openPage(event, 'UnderDevelope')"
-                >
+                <button class="tablinks" onclick="openPage(event, 'Game2')">
                     Tic-tac-toe
+                </button>
+                <button class="tablinks" onclick="openPage(event, 'Game3')">
+                    Snake
                 </button>
             </div>
 
@@ -47,8 +48,11 @@
             <div id="Game1" class="tabcontent">
                 <div id="Game1Page"></div>
             </div>
-            <div id="UnderDevelope" class="tabcontent default">
+            <div id="Game2" class="tabcontent default">
                 <div id="Game2Page"></div>
+            </div>
+            <div id="Game3" class="tabcontent">
+                <div id="UnderDevelope"></div>
             </div>
         </div>
 

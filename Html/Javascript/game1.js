@@ -122,7 +122,7 @@ async function ShowMessage(option) {
         case "stop":
             if (winner === "I") {
                 P1 = "Yeah, my number is ";
-                P2 = currentNum;
+                P2 = numEnd;
             } else {
                 P1 = "Congratulation, you win! Let's play another game. ";
                 P2 = "";
