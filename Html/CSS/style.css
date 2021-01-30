@@ -8,6 +8,10 @@
     border-collapse: collapse;
 }
 
+canvas {
+    overflow: hidden;
+}
+
 :root {
     --document-width: max(100%, 100vw);
     --document-height: max(100%, 100vh);
@@ -382,4 +386,50 @@ div#Game2Page button {
     font-weight: 800;
     border-radius: 25px;
     margin: 5px 0px;
+}
+
+div.snakeGame {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: left;
+    align-content: left;
+}
+
+div.snakeGame table {
+    position: relative;
+    margin: 10px 15px;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+}
+div.snakeGame td {
+    padding: 5px;
+}
+
+div.snakeGame div,
+div.snakeGame span,
+div.snakeGame button,
+div.snakeGame select {
+    font-size: 1em;
+    margin: 0px 5px;
+    min-width: 25px;
+    border-radius: 15px;
+}
+
+div.snakeGame button,
+div.snakeGame select {
+    padding: 5px;
+}
+
+div.snakeGame canvas#snakeGame {
+    background-color: rgb(235, 235, 235);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 500px;
+    min-height: 300px;
+    max-width: 750px;
+    max-height: 450px;
+    border: 2px dashed rgb(51, 51, 51);
+    border-radius: 15px;
 }

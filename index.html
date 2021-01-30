@@ -14,7 +14,7 @@
             $(function () {
                 $("#header").load("./Html/header.html");
                 $("#footer").load("./Html/footer.html");
-                $("#UnderDevelope").load("./Html/developing.html");
+                $(".UnderDevelope").load("./Html/developing.html");
                 $("#MusicsPage").load("./Html/Musics.html");
                 $("#Game1Page").load("./Html/game1.html");
                 $("#Game2Page").load("./Html/game2.html");
@@ -45,7 +45,7 @@
                     Snake game
                 </button>
                 <button class="tablinks" onclick="openPage(event, 'Game4')">
-                    Maze generate
+                    Maze puzzle
                 </button>
             </div>
 
@@ -55,14 +55,14 @@
             <div id="Game1" class="tabcontent">
                 <div id="Game1Page"></div>
             </div>
-            <div id="Game2" class="tabcontent default">
+            <div id="Game2" class="tabcontent">
                 <div id="Game2Page"></div>
             </div>
-            <div id="Game3" class="tabcontent">
-                <div id="UnderDevelope"></div>
+            <div id="Game3" class="tabcontent default">
+                <div id="Game3Page"></div>
             </div>
-            <div id="Game4" class="tabcontent">
-                <div id="UnderDevelope"></div>
+            <div id="Game4" class="tabcontent UnderDevelope">
+                <div id="Game4Page"></div>
             </div>
         </div>
 
