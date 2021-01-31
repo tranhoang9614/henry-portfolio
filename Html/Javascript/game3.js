@@ -16,7 +16,6 @@ var Frame, Speed;
 var food;
 
 var Grow = false;
-var consoleLog = false;
 
 function ButtonFunctions() {
     edgeButton.addEventListener("click", () => {});
@@ -36,7 +35,6 @@ function setup() {
     speedButton.addEventListener("click", () => {
         var newSpeed;
         var currentSpeed = speedButton.textContent;
-        console.log(currentSpeed);
         switch (true) {
             case currentSpeed.indexOf("3") !== -1:
                 newSpeed = 5;
@@ -55,15 +53,6 @@ function setup() {
                 break;
         }
         updateSpeed(newSpeed);
-    });
-
-    stopButton.addEventListener("click", () => {
-        consoleLog = !consoleLog;
-
-        stopButton.textContent =
-            stopButton.textContent.indexOf("Stop") === -1
-                ? "Stop logging"
-                : "Start logging";
     });
 }
 
@@ -86,8 +75,6 @@ function draw() {
 
             ctx.fillStyle = "blue";
             food.show();
-
-            console.log(Speed);
         }, Speed);
     }
 }
@@ -178,6 +165,7 @@ class Snake {
             } else {
                 ctx.fillStyle = "rgb(" + i + ", " + i + ", " + i + ")";
             }
+
             ctx.fillRect(SnakeBody[i].x, SnakeBody[i].y, snakeSize, snakeSize);
         }
     }
@@ -217,12 +205,6 @@ function keypress() {
         },
         true
     );
-}
-
-function LogHelper(content) {
-    if (consoleLog) {
-        console.table(content);
-    }
 }
 
 setup();
